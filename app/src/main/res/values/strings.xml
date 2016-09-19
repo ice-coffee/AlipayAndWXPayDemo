@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AlipayAndWXPayDemo</string>
+
+    <string name="sure">确定</string>
+    <string name="pay_success">支付成功</string>
+    <string name="pay_error_1">支付失败</string>
+    <string name="pay_error_2">您取消了支付</string>
+</resources>
