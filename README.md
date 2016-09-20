@@ -8,7 +8,7 @@
 - 在账号中心进行开发者资质认证, 这是使用微信支付以及微信登录等高级功能的必要步骤, 但是需要1年300的费用.
 - 在管理中心创建应用获取APP_ID, 这个一般在7个工作日内.
 - 在应用详情页点击申请支付能力, 在接下来的步骤中你需要进行"资料审核", "账户验证", "协议签署"三步, 这个也需要几个工作日的时间.
-- 通过查看微信支付流程图编写代码
+- 通过查看微信支付流程图并根据[Android接入指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=1417751808&token=&lang=zh_CN)编写代码
 ![](https://pay.weixin.qq.com/wiki/doc/api/img/chapter8_3_1.png)
 - 微信统一下单接口
 
