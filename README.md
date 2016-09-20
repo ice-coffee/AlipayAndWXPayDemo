@@ -8,6 +8,7 @@
 - 在账号中心进行开发者资质认证, 这是使用微信支付以及微信登录等高级功能的必要步骤, 但是需要1年300的费用.
 - 在管理中心创建应用获取APP_ID, 这个一般在7个工作日内.
 - 在应用详情页点击申请支付能力, 在接下来的步骤中你需要进行"资料审核", "账户验证", "协议签署"三步, 这个也需要几个工作日的时间.
+- 之后还需要创建微信商户平台.
 - 通过查看微信支付流程图并根据[Android接入指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=1417751808&token=&lang=zh_CN)编写代码
 ![](https://pay.weixin.qq.com/wiki/doc/api/img/chapter8_3_1.png)
 - 微信统一下单接口
@@ -17,7 +18,10 @@
   - 微信的统一下单接口接收的参数是一段xml代码;
   - 把所有需要传递的参数组合成一段xml代码，`要有换行符`，不然微信服务端无法识别;
   - 在调用签名算法时需要用的`KEY`, 它的生成方式可以参考![签名算法](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=4_3);
-  - 统一下单接口的返回值是一段xml代码, 所以你需要对它进行解析.
+  - 统一下单接口的返回值是一段xml代码, 所以你需要对它进行xml解析.
+  - 根据微信支付流程图可值, 微信统一下单接口是在服务端调取的而非客户端.
+  
+
 ```
 	StringBuilder xml = new StringBuilder();
         xml.append("<xml>"+"\n");
@@ -62,4 +66,12 @@
     }
 ```
 - 微信支付接口
-支付接口参看微信支付提供的API文档即可.
+支付接口参看微信支付提供的demo即可.
+
+###支付宝支付
+>支付宝支付流程相对于微信支付来说较为简单了
+
+- 在管理中心创建应用
+- 在应用详情页中申请支付功能, 并[签约审核](https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.DvY2jV&treeId=193&articleId=105314&docType=1)
+- 根据[App支付快速接入](https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.q1S3rL&treeId=204&articleId=105297&docType=1)和支付交互流程图编写代码![](https://img.alicdn.com/top/i1/LB1d7GlMVXXXXbTXFXXXXXXXXXX)
+
